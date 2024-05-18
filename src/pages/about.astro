@@ -1,0 +1,65 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { Hero } from "@modules/Hero";
+import { HeroSlider7 } from "@static/images";
+import { ServiceCards } from "@modules/ServiceCards";
+import { Footer } from "@modules/Footer";
+---
+
+<Layout
+    title="We Futurize | Homepage"
+    description="YOUR META DESCRIPTION FOR SEO"
+>
+    <main class="page-content">
+        <Hero
+            heroType="ParallaxImage"
+            client:visible
+            data={{
+                image: HeroSlider7.src,
+                content: {
+                    title: "Software is our passion",
+                    paragraph:
+                        "We care about the business value of your applications and we want to delivery the best possible solutions.",
+                },
+            }}
+        />
+        <ServiceCards
+            description="SERVICES"
+            title="The Service We Provide For You"
+            client:visible
+            cards={[
+                {
+                    title: ".NET development in C#",
+                    description:
+                        "Writing code in .NET is where we shine. Proven knowledge of C# on a wide variaty of projects and certifications. We can extend existing applications or write new ones from scratch.",
+                },
+                {
+                    title: "Azure Cloud",
+                    description:
+                        "Leverage the power of Azure using the many services. Receiving thousands of real time events, processing them with stream analytics. Securing your applications with Azure AD. Use Service Fabric or Container Apps to create scalable micro services. Intelligent apps with AI powered chat bots and more.",
+                },
+                {
+                    title: "Frontend development in javascript",
+                    description:
+                        "As full stack devs we love building front-ends using one of the latest javascript frameworks or even in vanilla js with web components. Need an extra pair of hands for building all components of your newest design system don't hesitate to reach out.",
+                },
+                {
+                    title: "Devops and continuous delivery",
+                    description:
+                        "In sprint 0 we do all the heavy lifting related to build and release pipelines for the continuous delivery of your projects. We have years of handson experience with Azure Devops.",
+                },
+                {
+                    title: "Application security",
+                    description:
+                        "Thinking of security in cloud can sometimes be overwhelming. We help our customers to address relevant security topics within their cloud infrastructure and applications.",
+                },
+                {
+                    title: "Architecture",
+                    description:
+                        "We have architects that don't only know the theory but have also tons of practical experience in software architecture. Solution design, C4 models, DDD, coaching, ...",
+                },
+            ]}
+        />
+    </main>
+    <Footer />
+</Layout>

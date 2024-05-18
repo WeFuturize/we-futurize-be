@@ -1,0 +1,91 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { Hero } from "@modules/Hero";
+import { HeroSlider8, InfiniteImg1, InfiniteImg2, InfiniteImg3, InfiniteImg4 } from "@static/images";
+import { Footer } from "@modules/Footer";
+---
+
+<Layout
+    title="We Futurize | Homepage"
+    description="YOUR META DESCRIPTION FOR SEO"
+>
+    <main class="page-content">
+        <Hero
+            heroType="ParallaxImage"
+            client:visible
+            data={{
+                image: HeroSlider8.src,
+                content: {
+                    title: "Customers",
+                    paragraph:
+                        "Take a look at last customers we worked for. More can be found via linkedin.",
+                },
+            }}
+        />
+        <Hero
+            heroType="textImage"
+            client:visible
+            data={{
+                image: {
+                    src: InfiniteImg1.src,
+                    width: 590,
+                    height: 300,
+                    alt: "Hero Image",
+                },
+                title: "Making the difference with Katoen Natie IT!",
+                paragraph:
+                    "During several IT project at Katoen Natie we helped with software architecture and technical architecture of several cloud native applications. Applications that are used for asset management, consumer goods order picking, API management, AI retrieval augmented generation and building of a cloud platform.",
+            }}
+        />
+        <Hero
+            heroType="textImage"
+            client:visible
+            data={{
+                switchPlaces: true,
+                image: {
+                    src: InfiniteImg2.src,
+                    width: 590,
+                    height: 300,
+                    alt: "Hero Image",
+                },
+                title: "Platform team trading",
+                paragraph:
+                    "Creation of supporting software for trading and portfolio management. APIs and services that integrate with Bloomberg and Global Vision, exchanges and tickers.",
+            }}
+        />
+
+        <Hero
+            heroType="textImage"
+            client:visible
+            data={{
+                switchPlaces: false,
+                image: {
+                    src: InfiniteImg3.src,
+                    width: 590,
+                    height: 300,
+                    alt: "Hero Image",
+                },
+                title: "Light configuration tool",
+                paragraph:
+                    "Philips Maxos project configuration tool for LED lightning projects.",
+            }}
+        />
+
+        <Hero
+            heroType="textImage"
+            client:visible
+            data={{
+                image: {
+                    src: InfiniteImg4.src,
+                    width: 590,
+                    height: 400,
+                    alt: "Hero Image",
+                },
+                title: "Yummy Treats web shop",
+                paragraph:
+                    "Idea, logo design, headless e-commerce website and social media. Progressive web application with vue store front and integration with Shopware sales API.",
+            }}
+        />
+    </main>
+    <Footer />
+</Layout>

@@ -1,0 +1,29 @@
+---
+import { HeroSlider4 } from "@static/images";
+import Layout from "../layouts/Layout.astro";
+import { Contact as ContactModule } from "@modules/Contact";
+import { Hero } from "@modules/Hero";
+import { Footer } from "@modules/Footer";
+---
+
+<Layout
+    title="We Futurize | Homepage"
+    description="YOUR META DESCRIPTION FOR SEO"
+>
+    <main class="page-content">
+        <Hero
+            heroType="ParallaxImage"
+            client:load
+            data={{
+                image: HeroSlider4.src,
+                content: {
+                    title: "Contact",
+                    paragraph:
+                        "Contact us if you want us to help you move your IT forward!",
+                },
+            }}
+        />
+        <ContactModule client:load />
+    </main>
+    <Footer />
+</Layout>

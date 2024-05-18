@@ -1,0 +1,40 @@
+---
+import { HeroSlider3, HeroSlider6 } from "@static/images";
+import Layout from "../layouts/Layout.astro";
+import { Hero } from "@modules/Hero";
+---
+
+<Layout
+    title="We Futurize | Homepage"
+    description="YOUR META DESCRIPTION FOR SEO"
+>
+    <main class="page-content">
+        <Hero
+            client:load
+            heroType="fullPageSlider"
+            data={[
+                {
+                    subtitle: "We are",
+                    title: "We Futurize",
+                    background: HeroSlider3.src,
+                    paragraph:
+                        "IT is like a shark when it doesn't move forward it dies",
+                    button: {
+                        text: "Let's build together",
+                        link: "/contact",
+                    },
+                },
+                {
+                    subtitle: "Custom web and mobile software solutions",
+                    title: "IT consultancy",
+                    background: HeroSlider6.src,
+                    paragraph: "",
+                    button: {
+                        text: "Take a look",
+                        link: "/about",
+                    },
+                },
+            ]}
+        />
+    </main>
+</Layout>
